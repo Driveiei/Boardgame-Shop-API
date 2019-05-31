@@ -36,7 +36,7 @@ router.get('/findByCP/:boardgameDetails', (req, res, next) => {
                         max_player: doc.max_player,
                         avg_rating: doc.avg_rating
                     };
-                })
+                }).sort((a, b) => parseFloat(a.avg_rating) - parseFloat(b.avg_rating))
             };
             res.status(200).json(response);
         })
@@ -82,7 +82,7 @@ router.get('/findByCT/:boardgameDetails', (req, res, next) => {
                         max_player: doc.max_player,
                         avg_rating: doc.avg_rating
                     };
-                })
+                }).sort((a, b) => parseFloat(a.avg_rating) - parseFloat(b.avg_rating))
             };
             res.status(200).json(response);
         })
@@ -128,7 +128,7 @@ router.get('/findByPC/:boardgameDetails', (req, res, next) => {
                         max_player: doc.max_player,
                         avg_rating: doc.avg_rating
                     };
-                })
+                }).sort((a, b) => parseFloat(a.avg_rating) - parseFloat(b.avg_rating))
             };
             res.status(200).json(response);
         })
@@ -173,7 +173,7 @@ router.get('/findByCY/:boardgameDetails', (req, res, next) => {
                         max_player: doc.max_player,
                         avg_rating: doc.avg_rating
                     };
-                })
+                }).sort((a, b) => parseFloat(a.avg_rating) - parseFloat(b.avg_rating))
             };
             res.status(200).json(response);
         })
@@ -219,7 +219,7 @@ router.get('/findByPT/:boardgameDetails', (req, res, next) => {
                         max_player: doc.max_player,
                         avg_rating: doc.avg_rating
                     };
-                })
+                }).sort((a, b) => parseFloat(a.avg_rating) - parseFloat(b.avg_rating))
             };
             res.status(200).json(response);
         })
@@ -265,7 +265,7 @@ router.get('/findByPP/:boardgameDetails', (req, res, next) => {
                         max_player: doc.max_player,
                         avg_rating: doc.avg_rating
                     };
-                })
+                }).sort((a, b) => parseFloat(a.avg_rating) - parseFloat(b.avg_rating))
             };
             res.status(200).json(response);
         })
@@ -310,7 +310,7 @@ router.get('/findByPY/:boardgameDetails', (req, res, next) => {
                         max_player: doc.max_player,
                         avg_rating: doc.avg_rating
                     };
-                })
+                }).sort((a, b) => parseFloat(a.avg_rating) - parseFloat(b.avg_rating))
             };
             res.status(200).json(response);
         })
@@ -357,7 +357,7 @@ router.get('/findByTP/:boardgameDetails', (req, res, next) => {
                         max_player: doc.max_player,
                         avg_rating: doc.avg_rating
                     };
-                })
+                }).sort((a, b) => parseFloat(a.avg_rating) - parseFloat(b.avg_rating))
             };
             res.status(200).json(response);
         })
@@ -403,7 +403,7 @@ router.get('/findByTY/:boardgameDetails', (req, res, next) => {
                         max_player: doc.max_player,
                         avg_rating: doc.avg_rating
                     };
-                })
+                }).sort((a, b) => parseFloat(a.avg_rating) - parseFloat(b.avg_rating))
             };
             res.status(200).json(response);
         })
@@ -449,7 +449,7 @@ router.get('/findByYP/:boardgameDetails', (req, res, next) => {
                         max_player: doc.max_player,
                         avg_rating: doc.avg_rating
                     };
-                })
+                }).sort((a, b) => parseFloat(a.avg_rating) - parseFloat(b.avg_rating))
             };
             res.status(200).json(response);
         })

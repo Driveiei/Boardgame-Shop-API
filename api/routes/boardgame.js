@@ -31,7 +31,7 @@ router.get('/', (req, res, next) => {
                         max_player: doc.max_player,
                         avg_rating: doc.avg_rating
                     }
-                })
+                }).sort((a, b) => parseFloat(a.avg_rating) - parseFloat(b.avg_rating))
             })
         })
         .catch(err => {
@@ -158,7 +158,7 @@ router.get('/findByAge/:boardgameAge', (req, res, next) => {
                     message: 'Boardgame age' + age + ' does not exist'
                 });
             }
-        })
+        }).sort((a, b) => parseFloat(a.avg_rating) - parseFloat(b.avg_rating))
         .catch(err => {
             console.log(err);
             res.status(500).json({
@@ -207,7 +207,7 @@ router.get('/findByPrice/:boardgamePrice', (req, res, next) => {
                     message: 'Boardgame price' + price + ' does not exist'
                 });
             }
-        })
+        }).sort((a, b) => parseFloat(a.avg_rating) - parseFloat(b.avg_rating))
         .catch(err => {
             console.log(err);
             res.status(500).json({
@@ -235,7 +235,7 @@ router.get('/findByTime/:boardgameTime', (req, res, next) => {
                     message: 'Boardgame time' + time + ' does not exist'
                 });
             }
-        })
+        }).sort((a, b) => parseFloat(a.avg_rating) - parseFloat(b.avg_rating))
         .catch(err => {
             console.log(err);
             res.status(500).json({
@@ -259,7 +259,7 @@ router.get('/findByYear/:boardgameYear', (req, res, next) => {
                     message: 'Boardgame year' + year + ' does not exist'
                 });
             }
-        })
+        }).sort((a, b) => parseFloat(a.avg_rating) - parseFloat(b.avg_rating))
         .catch(err => {
             console.log(err);
             res.status(500).json({
@@ -287,7 +287,7 @@ router.get('/findByPlayer/:boardgamePlayer', (req, res, next) => {
                     message: 'Boardgame year' + year + ' does not exist'
                 });
             }
-        })
+        }).sort((a, b) => parseFloat(a.avg_rating) - parseFloat(b.avg_rating))
         .catch(err => {
             console.log(err);
             res.status(500).json({
@@ -391,7 +391,7 @@ router.get('/findByAll/:boardgameDetails', (req, res, next) => {
                         max_player: doc.max_player,
                         avg_rating: doc.avg_rating
                     };
-                })
+                }).sort((a, b) => parseFloat(a.avg_rating) - parseFloat(b.avg_rating))
             };
             res.status(200).json(response);
         })

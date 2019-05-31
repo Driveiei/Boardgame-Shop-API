@@ -6,6 +6,9 @@ const mongoose = require('mongoose');
 
 const boardgameRoutes = require('./api/routes/boardgame');
 const boardgameRoutesTwo = require('./api/routes/boardgametwo');
+const boardgameRoutesThree = require('./api/routes/boardgamethree');
+const boardgameRoutesFour = require('./api/routes/boardgamefour');
+
 // const orderRoutes = require('./api/routes/order');
 
 //Connect with mongodb cloud(cluster)
@@ -41,6 +44,8 @@ app.use((req, res, next)=>{
 // Route which should handle requests
 app.use('/boardgame', boardgameRoutes);
 app.use('/boardgametwo', boardgameRoutesTwo);
+app.use('/boardgamethree', boardgameRoutesThree);
+app.use('/boardgamefour', boardgameRoutesFour);
 
 // app.use('/order', orderRoutes);
 
