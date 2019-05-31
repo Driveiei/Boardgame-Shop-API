@@ -9,7 +9,7 @@ const boardgameRoutesTwo = require('./api/routes/boardgametwo');
 const boardgameRoutesThree = require('./api/routes/boardgamethree');
 const boardgameRoutesFour = require('./api/routes/boardgamefour');
 
-// const orderRoutes = require('./api/routes/order');
+const orderRoutes = require('./api/routes/order');
 
 //Connect with mongodb cloud(cluster)
 mongoose.connect('mongodb+srv://board-game-acc:'
@@ -46,8 +46,7 @@ app.use('/boardgame', boardgameRoutes);
 app.use('/boardgametwo', boardgameRoutesTwo);
 app.use('/boardgamethree', boardgameRoutesThree);
 app.use('/boardgamefour', boardgameRoutesFour);
-
-// app.use('/order', orderRoutes);
+app.use('/order', orderRoutes);
 
 app.use((req, res, next)=>{
     const error = new Error('Not found');
