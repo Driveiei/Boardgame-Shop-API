@@ -26,7 +26,7 @@ router.get('/', (req, res, next) => {
                         boardgame4: doc.boardgame4,
                         boardgame5: doc.boardgame5
                     }
-                })
+                }).sort((a, b) => parseInt(b.year) - parseInt(a.year))
             })
         })
         .catch(err => {
