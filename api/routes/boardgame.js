@@ -101,7 +101,7 @@ router.get('/findByBoardgameId/:boardgameId', (req, res, next) => {
     Boardgame.find({ _id: id })
         .exec()
         .then(doc => {
-            if (doc) {
+            if (doc.sort((a, b) => parseFloat(b.avg_rating) - parseFloat(a.avg_rating))) {
                 res.status(200).json({
                     boardgame: doc
                 });
@@ -125,7 +125,7 @@ router.get('/findByName/:boardgameName', (req, res, next) => {
     Boardgame.find({ name: name })
         .exec()
         .then(doc => {
-            if (doc) {
+            if (doc.sort((a, b) => parseFloat(b.avg_rating) - parseFloat(a.avg_rating))) {
                 res.status(200).json({
                     boardgame: doc
                 });
@@ -149,7 +149,7 @@ router.get('/findByAge/:boardgameAge', (req, res, next) => {
     Boardgame.find({ age: age })
         .exec()
         .then(doc => {
-            if (doc) {
+            if (doc.sort((a, b) => parseFloat(b.avg_rating) - parseFloat(a.avg_rating))) {
                 res.status(200).json({
                     boardgame: doc
                 });
@@ -158,7 +158,7 @@ router.get('/findByAge/:boardgameAge', (req, res, next) => {
                     message: 'Boardgame age' + age + ' does not exist'
                 });
             }
-        }).sort((a, b) => parseFloat(a.avg_rating) - parseFloat(b.avg_rating))
+        })
         .catch(err => {
             console.log(err);
             res.status(500).json({
@@ -173,7 +173,7 @@ router.get('/findByCategory/:boardgameCategory', (req, res, next) => {
     Boardgame.find({ category: category })
         .exec()
         .then(doc => {
-            if (doc) {
+            if (doc.sort((a, b) => parseFloat(b.avg_rating) - parseFloat(a.avg_rating))) {
                 res.status(200).json({
                     boardgame: doc
                 });
@@ -198,7 +198,7 @@ router.get('/findByPrice/:boardgamePrice', (req, res, next) => {
     Boardgame.find({ price: { $lte: price } })
         .exec()
         .then(doc => {
-            if (doc) {
+            if (doc.sort((a, b) => parseFloat(b.avg_rating) - parseFloat(a.avg_rating))) {
                 res.status(200).json({
                     boardgame: doc
                 });
@@ -207,7 +207,7 @@ router.get('/findByPrice/:boardgamePrice', (req, res, next) => {
                     message: 'Boardgame price' + price + ' does not exist'
                 });
             }
-        }).sort((a, b) => parseFloat(a.avg_rating) - parseFloat(b.avg_rating))
+        })
         .catch(err => {
             console.log(err);
             res.status(500).json({
@@ -226,7 +226,7 @@ router.get('/findByTime/:boardgameTime', (req, res, next) => {
     })
         .exec()
         .then(doc => {
-            if (doc) {
+            if (doc.sort((a, b) => parseFloat(b.avg_rating) - parseFloat(a.avg_rating))) {
                 res.status(200).json({
                     boardgame: doc
                 });
@@ -235,7 +235,7 @@ router.get('/findByTime/:boardgameTime', (req, res, next) => {
                     message: 'Boardgame time' + time + ' does not exist'
                 });
             }
-        }).sort((a, b) => parseFloat(a.avg_rating) - parseFloat(b.avg_rating))
+        })
         .catch(err => {
             console.log(err);
             res.status(500).json({
@@ -250,7 +250,7 @@ router.get('/findByYear/:boardgameYear', (req, res, next) => {
     Boardgame.find({ year: year })
         .exec()
         .then(doc => {
-            if (doc) {
+            if (doc.sort((a, b) => parseFloat(b.avg_rating) - parseFloat(a.avg_rating))) {
                 res.status(200).json({
                     boardgame: doc
                 });
@@ -259,7 +259,7 @@ router.get('/findByYear/:boardgameYear', (req, res, next) => {
                     message: 'Boardgame year' + year + ' does not exist'
                 });
             }
-        }).sort((a, b) => parseFloat(a.avg_rating) - parseFloat(b.avg_rating))
+        })
         .catch(err => {
             console.log(err);
             res.status(500).json({
@@ -278,7 +278,7 @@ router.get('/findByPlayer/:boardgamePlayer', (req, res, next) => {
     })
         .exec()
         .then(doc => {
-            if (doc) {
+            if (doc.sort((a, b) => parseFloat(b.avg_rating) - parseFloat(a.avg_rating))) {
                 res.status(200).json({
                     boardgame: doc
                 });
@@ -287,7 +287,7 @@ router.get('/findByPlayer/:boardgamePlayer', (req, res, next) => {
                     message: 'Boardgame year' + year + ' does not exist'
                 });
             }
-        }).sort((a, b) => parseFloat(a.avg_rating) - parseFloat(b.avg_rating))
+        })
         .catch(err => {
             console.log(err);
             res.status(500).json({
