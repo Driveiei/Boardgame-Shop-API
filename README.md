@@ -2,7 +2,7 @@
 
 ## Prerequisite
 - Node.js: https://nodejs.org/en/download/
-- Project source:
+- Project source: https://github.com/NokKbl/bgameshop/blob/master/boardgameshop.zip
 
 ## How to run our project
 1. Extract `boardgameshop.zip` file.
